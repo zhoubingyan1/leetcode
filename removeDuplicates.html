@@ -1,0 +1,52 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title> 从排序数组中删除重复项</title>
+    </head>
+    <body>
+        <script>
+            /*
+            * 给定数组 nums = [1,1,2],
+            * 函数应该返回新的长度 2, 并且原数组 nums 的前两个元素被修改为 1, 2。
+            * 你不需要考虑数组中超出新长度后面的元素。
+            */
+            /*
+            *给定 nums = [0,0,1,1,1,2,2,3,3,4],
+            *函数应该返回新的长度 5, 并且原数组 nums 的前五个元素被修改为 0, 1, 2, 3, 4。
+            *你不需要考虑数组中超出新长度后面的元素。
+            */
+            // let removeDuplicates = function (nums){
+            //     for(let i =0;i<nums.length;i++){
+            //         //j等于nums最后一个数
+            //         for(let j=nums.length-1;j>i;j--){
+            //             if(nums[i]==nums[j]){
+            //                 nums.splice(j,1);
+            //             }
+            //         }
+            //     }
+            //     console.log(nums)
+            //     return nums.length
+            // }
+
+            let removeDuplicates = function (nums){
+                let newnums=new Array();
+                for(let i =0;i<nums.length;i++) { //j等于nums最后一个数 
+                    for(let j=i+1;j<nums.length;j++){
+                        if(nums[i]===nums[j]){
+                            ++i
+                        }
+                    }
+                    newnums.push(nums[i])
+                }
+                console.log(newnums)
+                return newnums.length
+            }
+
+            let nums = [1,1,2];
+            removeDuplicates(nums)
+        </script>
+    </body>
+    </html>
