@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>反转字符串</title>
+</head>
+<body>
+    <script>
+    //编写一个函数，其作用是将输入的字符串反转过来。
+    /*
+        示例 1:
+        输入: "hello"
+        输出: "olleh"
+
+        示例 2:
+
+        输入: "A man, a plan, a canal: Panama"
+        输出: "amanaP :lanac a ,nalp a ,nam A"
+    */
+    /*
+    *常见写法，转为数组，翻转，变回来
+    */
+    var reverseString= function(s){
+        return s.split('').reverse().join('')
+    }
+    let s='A man, a plan, a canal: Panama';
+    reverseString(s);
+    console.log(reverseString(s))
+    </script>
+</body>
+</html>
