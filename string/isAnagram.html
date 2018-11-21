@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>有效的字母异位词</title>
+</head>
+<body>
+    <script>
+    /*
+    示例 1:
+
+    输入: s = "anagram", t = "nagaram"
+    输出: true
+
+    示例 2:
+
+    输入: s = "rat", t = "car"
+    输出: false
+    */
+    /**
+    *通过计数，然后判断是否元素都一样多
+    * @param {string} s
+    * @param {string} t
+    * @return {boolean}
+    */
+    var isAnagram = function(s, t) {
+        if(s.length != t.length) return false
+        let sarr = new Object();
+        let tarr = new Object();
+        for(var i = 0; i<s.length;i++){
+            if(!sarr[s[i]]) sarr[s[i]] = 0;
+            sarr[s[i]]++
+            if(!tarr[t[i]]) tarr[t[i]] = 0;
+            tarr[t[i]]++
+        }
+        for(var i in sarr){
+            if(sarr[i]!=tarr[i]){
+                return false;
+            }
+        }
+        return true
+
+    };
+    let s = "anagram";
+    let t = "nagaram";
+    isAnagram(s,t)
+    </script>
+</body>
+</html>
